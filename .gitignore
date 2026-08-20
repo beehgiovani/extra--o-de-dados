@@ -1,0 +1,29 @@
+# Ambiente Python e arquivos compilados
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Dados locais gerados pela coleta
+/data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+session-cookies.txt
+
+# Arquivos sensíveis ou de configuração local
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Registros e arquivos do sistema operacional
+*.log
+.DS_Store
+Thumbs.db
+
+# Metadados de editores
+.idea/
+.vscode/
