@@ -1,16 +1,35 @@
 # Ambiente Python e arquivos compilados
 .venv/
+venv/
+env/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
+.pyright/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
 
 # Dados locais gerados pela coleta
 /data/
+/arquivo_legado/
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal
 session-cookies.txt
+
+# Entradas autorizadas, respostas municipais e sessões de navegador
+/documentos_privados/
+/capturas_locais/
+/entrada_privada/
+/perfil_navegador/
+*.har
+playwright-report/
+test-results/
 
 # Arquivos sensíveis ou de configuração local
 .env
@@ -21,6 +40,8 @@ session-cookies.txt
 
 # Registros e arquivos do sistema operacional
 *.log
+*.tmp
+*.bak
 .DS_Store
 Thumbs.db
 

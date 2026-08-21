@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conferência local da base cadastral e territorial de Mogi das Cruzes.">
+  <title>Conferência cadastral — Mogi das Cruzes</title>
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="identity">
+      <div class="city-mark" aria-hidden="true">MC</div>
+      <div>
+        <p class="eyebrow">Base local de conferência</p>
+        <h1>Mogi das Cruzes</h1>
+      </div>
+    </div>
+    <div class="source-state">
+      <span class="state-dot" aria-hidden="true"></span>
+      Dados carregados localmente
+    </div>
+  </header>
+
+  <main>
+    <section class="summary" aria-label="Resumo da base">
+      <article class="metric metric-primary">
+        <span>Cadastros individuais</span>
+        <strong id="metricTotal">—</strong>
+      </article>
+      <article class="metric">
+        <span>Com valor venal</span>
+        <strong id="metricVenal">—</strong>
+      </article>
+      <article class="metric">
+        <span>Georreferenciadas</span>
+        <strong id="metricGeo">—</strong>
+      </article>
+      <article class="metric">
+        <span>Com contexto territorial</span>
+        <strong id="metricContext">—</strong>
+      </article>
+    </section>
+
+    <section class="workspace">
+      <aside class="search-panel" aria-label="Pesquisa de imóveis">
+        <div class="search-heading">
+          <div>
+            <p class="eyebrow">Consulta cadastral</p>
+            <h2>Localizar imóvel</h2>
+          </div>
+          <button id="clearFilters" class="text-button" type="button">Limpar</button>
+        </div>
+
+        <form id="searchForm" class="search-form">
+          <label class="search-field" for="searchInput">
+            <span class="sr-only">Inscrição, endereço ou classificação</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+            <input id="searchInput" name="q" autocomplete="off" placeholder="Cadastro, id_local, rua, bairro ou zona">
+            <button type="submit">Buscar</button>
+          </label>
+
+          <details class="filters" open>
+            <summary>Filtros da base</summary>
+            <div class="filter-grid">
+              <label>Bairro<select id="filterBairro" name="bairro"><option value="">Todos</option></select></label>
+              <label>Zoneamento<select id="filterZona" name="zona"><option value="">Todos</option></select></label>
+              <label>Situação venal<select id="filterSituacao" name="situacao"><option value="">Todas</option></select></label>
+              <label>Referência espacial<select id="filterPrecisao" name="precisao"><option value="">Todas</option></select></label>
+            </div>
+          </details>
+        </form>
+
+        <div class="result-header">
+          <p id="resultCount">Carregando base…</p>
+          <span id="pageLabel"></span>
+        </div>
+        <div id="resultList" class="result-list" aria-live="polite"></div>
+        <nav class="pagination" aria-label="Páginas dos resultados">
+          <button id="previousPage" type="button">← Anterior</button>
+          <button id="nextPage" type="button">Próxima →</button>
+        </nav>
+      </aside>
+
+      <section class="map-panel" aria-label="Mapa dos resultados">
+        <div id="map"></div>
+        <div class="map-toolbar">
+          <div><strong id="mapCount">0</strong> posições distintas · <strong id="mapCadastros">0</strong> cadastros</div>
+          <div class="precision-key"><i></i> Referência aproximada</div>
+        </div>
+        <div id="mapFallback" class="map-fallback" hidden>
+          O mapa-base depende de conexão com a internet. A busca e todas as fichas continuam funcionando localmente.
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div id="detailBackdrop" class="detail-backdrop" hidden></div>
+  <aside id="detailPanel" class="detail-panel" aria-label="Ficha do imóvel" aria-hidden="true">
+    <header class="detail-header">
+      <div>
+        <p class="eyebrow">Ficha consolidada</p>
+        <h2 id="detailTitle">Imóvel</h2>
+        <p id="detailAddress"></p>
+      </div>
+      <button id="closeDetail" class="close-button" type="button" aria-label="Fechar ficha">×</button>
+    </header>
+    <div id="detailContent" class="detail-content"></div>
+  </aside>
+
+  <template id="loadingTemplate">
+    <div class="loading-card"><span></span><span></span><span></span></div>
+  </template>
+
+  <script src="/vendor/leaflet/leaflet.js"></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>
