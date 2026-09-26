@@ -1,6 +1,6 @@
 # Status e próximos passos — Coleta cadastral — Mogi das Cruzes e Itanhaém
 
-> Auditoria de 22/09/2026. Esta é uma fotografia baseada em arquivos, Git, artefatos e endpoints observáveis. Nenhum build completo foi executado nesta classificação.
+> Atualizado em 26/09/2026 após consolidação das mudanças locais e execução dos testes.
 
 ## Classificação
 
@@ -11,8 +11,8 @@
 ## Evidências observadas
 
 - O README documenta a conclusão do pacote público de Mogi de 2024 e seus limites.
-- Há testes e interface local; existem 12 mudanças locais com nova auditoria e coletor fiscal.
-- O Git registra uma base anterior, mas o trabalho atual ainda não foi consolidado.
+- Há testes, coletores e interface local para conferência dos resultados.
+- As mudanças locais foram revisadas e consolidadas; 12 testes passaram, além da compilação dos módulos Python.
 
 ## Diagnóstico franco
 
@@ -22,8 +22,9 @@
 
 ### P0 — preservar e tornar retomável
 
-- Salvar as 12 mudanças em commits separados por coleta, auditoria, testes e documentação.
-- Executar todos os testes e uma coleta amostral sem gravar credenciais.
+- [x] Salvar as mudanças revisadas sem versionar credenciais ou saídas privadas.
+- [x] Executar a suíte de testes e validar a compilação dos módulos.
+- Executar uma coleta amostral autorizada sempre que os portais forem alterados.
 - Registrar estado e lacunas de Itanhaém separadamente de Mogi.
 
 ### P1 — estabilizar
@@ -44,4 +45,3 @@ O projeto será considerado retomado quando o pipeline atualizar uma amostra de 
 ## Prompt de retomada para o Codex
 
 > Retome o projeto **Coleta cadastral — Mogi das Cruzes e Itanhaém** nesta pasta. Leia este arquivo e o README, inspecione o Git e preserve todo trabalho local. Comece somente pelo P0, valide com evidências e não implemente P1/P2 antes de apresentar o diagnóstico atualizado.
-
