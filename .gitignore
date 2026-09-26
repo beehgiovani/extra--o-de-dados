@@ -9,10 +9,14 @@ __pycache__/
 .pyright/
 .ruff_cache/
 .coverage
+.coverage.*
+coverage.xml
 htmlcov/
 build/
 dist/
 *.egg-info/
+.python-version
+.hypothesis/
 
 # Dados locais gerados pela coleta
 /data/
@@ -20,6 +24,9 @@ dist/
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal
+*.db
+*.db-shm
+*.db-wal
 session-cookies.txt
 
 # Entradas autorizadas, respostas municipais e sessões de navegador
@@ -30,6 +37,8 @@ session-cookies.txt
 *.har
 playwright-report/
 test-results/
+*.pstats
+*.prof
 
 # Arquivos sensíveis ou de configuração local
 .env
