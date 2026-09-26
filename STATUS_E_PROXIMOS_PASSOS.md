@@ -1,6 +1,6 @@
 # Status e próximos passos — Coleta cadastral — Mogi das Cruzes e Itanhaém
 
-> Atualizado em 26/09/2026 após consolidação das mudanças locais e execução dos testes.
+> Atualizado em 26/09/2026 após curadoria da branch publicada e execução dos testes disponíveis nela.
 
 ## Classificação
 
@@ -12,7 +12,8 @@
 
 - O README documenta a conclusão do pacote público de Mogi de 2024 e seus limites.
 - Há testes, coletores e interface local para conferência dos resultados.
-- As mudanças locais foram revisadas e consolidadas; 12 testes passaram, além da compilação dos módulos Python.
+- A branch publicada passou em 12 testes e na compilação dos módulos Python.
+- Uma árvore de trabalho separada contém oito arquivos modificados e cinco novos, com coletores, auditoria e testes ainda não integrados ao GitHub. Esse trabalho foi preservado e não deve ser descartado ou publicado sem revisão.
 
 ## Diagnóstico franco
 
